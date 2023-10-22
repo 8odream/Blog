@@ -35,4 +35,6 @@ More info: [Generating](https://hexo.io/docs/generating.html)
 $ hexo deploy
 ```
 
+## notice: All the string type are typed by alpha
+
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
