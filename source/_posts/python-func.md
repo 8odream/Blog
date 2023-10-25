@@ -35,6 +35,12 @@ def func2(c,**d):   #d为字典
         pass
 ```
 
+### 匿名函数lambda
+
+```py3
+func_name=lambda pass_arguments: return_value #code,可省略#
+```
+
 ### 类名
 
 ``` py3
