@@ -14,7 +14,7 @@
 <meta property="og:description" content="自定义函数123def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数    *&#x2F; Code &#x2F;*  #pass 占位语句，用于打框架时占位提示代码未完成    return return_value  注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-10-25T01:12:34.000Z">
-<meta property="article:modified_time" content="2023-10-25T02:46:57.501Z">
+<meta property="article:modified_time" content="2023-10-25T02:59:41.646Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -64,12 +64,12 @@
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/Blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/Blog/atom.xml" title="Flux RSS"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Rechercher"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
       </div>
     </div>
   </div>
@@ -108,12 +108,14 @@
 <p>函数参数:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def f(function,a,b):</span><br><span class="line">    &#x27;&#x27;&#x27;return function(a)+function(b)&#x27;&#x27;&#x27;</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 
+<h3 id="匿名函数lambda"><a href="#匿名函数lambda" class="headerlink" title="匿名函数lambda"></a>匿名函数lambda</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func_name=lambda pass_arguments: return_value #code,可省略#</span><br></pre></td></tr></table></figure>
+
 <h3 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class class_name(value1,value2...):</span><br><span class="line">    fixed_value3_name=fixed_value3  #可以在主程序中被修改。可以直接修改整个类的属性，也可以只修改单个实例（实质是创建了新的同名属性，且之前的属性被屏蔽。可以使用del删除这个属性来恢复对原值的访问）</span><br><span class="line">    fixed_value4_name=fixed_value4</span><br><span class="line">    def __init__(self,value1_name,value2_name...):</span><br><span class="line">        self.value1_name=value1</span><br><span class="line">        self.value2_name=value2</span><br><span class="line"></span><br><span class="line">    def function_name1:</span><br><span class="line">        pass</span><br><span class="line">    def function_name2:</span><br><span class="line">        pass</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">a=class_name(v1,v2)</span><br><span class="line">print(a.function1())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Partager</span></a>
       
       
       
@@ -125,9 +127,18 @@
     
 <nav id="article-nav">
   
+    <a href="/Blog/2023/10/25/sorting/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          sorting
+        
+      </div>
+    </a>
+  
   
     <a href="/Blog/2023/10/25/documents/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">documents</div>
     </a>
   
@@ -146,7 +157,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
     </div>
@@ -156,7 +167,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a>
     </div>
@@ -165,7 +176,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/10/">October 2023</a></li></ul>
     </div>
@@ -175,9 +186,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Blog/2023/10/25/py-stuffs/">py_stuffs</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2023/10/25/sorting/">sorting</a>
+          </li>
         
           <li>
             <a href="/Blog/2023/10/25/python-func/">python_func</a>
@@ -189,14 +208,6 @@
         
           <li>
             <a href="/Blog/2023/10/22/Javascript/">Javascript</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/22/Internet/">Internet</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/18/introduction/">Python</a>
           </li>
         
       </ul>
@@ -213,7 +224,7 @@
     <div id="footer-info" class="inner">
       
       &copy; 2023 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
