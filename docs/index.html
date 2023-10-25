@@ -73,6 +73,102 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-python-func" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Blog/2023/10/25/python-func/" class="article-date">
+  <time class="dt-published" datetime="2023-10-25T01:12:34.000Z" itemprop="datePublished">2023-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Blog/2023/10/25/python-func/">python_func</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数</span><br><span class="line">    */ Code /*  #pass 占位语句，用于打框架时占位提示代码未完成</span><br><span class="line">    return return_value</span><br></pre></td></tr></table></figure>
+
+<p>注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这样做.可以加globle显式声明使用全局变量),不可被主函数或其他外部函数使用.用完即销.函数内定义的函数同样遵循这一规则.</p>
+<p>1.函数可以没有return值.<br>2.函数可以自我调用递归.<br>3.函数内可以使用其他自定义函数.</p>
+<p>可变长参数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def func1(a,*b):   #b为元组。传入元组时可以不带括号</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">def func2(c,**d):   #d为字典</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<p>函数参数:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def f(function,a,b):</span><br><span class="line">    &#x27;&#x27;&#x27;return function(a)+function(b)&#x27;&#x27;&#x27;</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<h3 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class class_name(value1,value2...):</span><br><span class="line">    fixed_value3_name=fixed_value3  #可以在主程序中被修改。可以直接修改整个类的属性，也可以只修改单个实例（实质是创建了新的同名属性，且之前的属性被屏蔽。可以使用del删除这个属性来恢复对原值的访问）</span><br><span class="line">    fixed_value4_name=fixed_value4</span><br><span class="line">    def __init__(self,value1_name,value2_name...):</span><br><span class="line">        self.value1_name=value1</span><br><span class="line">        self.value2_name=value2</span><br><span class="line"></span><br><span class="line">    def function_name1:</span><br><span class="line">        pass</span><br><span class="line">    def function_name2:</span><br><span class="line">        pass</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">a=class_name(v1,v2)</span><br><span class="line">print(a.function1())</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-documents" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Blog/2023/10/25/documents/" class="article-date">
+  <time class="dt-published" datetime="2023-10-25T00:06:22.000Z" itemprop="datePublished">2023-10-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Blog/2023/10/25/documents/">documents</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>文件路径:<br>相对路径 绝对路径</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//设当前文件的路径为D:\test1\test2\code.py,即当前工作的文件夹为test2</span><br><span class="line"></span><br><span class="line">D   ///盘符作为根目录</span><br><span class="line">|   test1</span><br><span class="line">|   |   document1.txt</span><br><span class="line">|   |   document2.txt</span><br><span class="line">|   test2</span><br><span class="line">|   |   code.py</span><br><span class="line">|   |   document3.txt</span><br><span class="line">|   |   test3</span><br><span class="line">|   |   |   document4.txt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">D:/test2/document3.txt     ///标准绝对路径</span><br><span class="line">./test3/document4.txt    ///标准相对路径,需要使用\\来转义\.默认读取代码同一层的文件</span><br><span class="line">../test1/document1.txt    ///<span class="string">&quot;../&quot;</span>可以叠加使用来达到更外层的文件夹,但是不能超过根目录</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>windows系统的分隔符默认为,但是替换成&#x2F;python也能正常识别.也就是说,在不考虑转义的情况下,正反斜杠的作用是一样的</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;文件读写&#x27;&#x27;&#x27;</span><br><span class="line">f=open(&quot;file_route&quot;,&quot;open_type&quot;)</span><br><span class="line">li=list(f)   ///以行为间隔,将内容存在列表里.注意每个元素最后包含一个换行符</span><br><span class="line">f.readline()</span><br><span class="line">f.seek(offset[,whence])  #0为头，1为本地，2为尾部</span><br><span class="line">f.write(&quot;content&quot;)</span><br><span class="line">f.writelines(list)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/documents/" data-id="clo55njqb00023g6zgs6fez6z" data-title="documents" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Javascript" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/Blog/2023/10/22/Javascript/" class="article-date">
@@ -113,6 +209,8 @@
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li></ul>
+
     </footer>
   </div>
   
@@ -161,6 +259,8 @@ url:分为绝对地址和相对地址
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li></ul>
+
     </footer>
   </div>
   
@@ -201,6 +301,8 @@ url:分为绝对地址和相对地址
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
+
     </footer>
   </div>
   
@@ -270,9 +372,23 @@ url:分为绝对地址和相对地址
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -291,6 +407,14 @@ url:分为绝对地址和相对地址
       <ul>
         
           <li>
+            <a href="/Blog/2023/10/25/python-func/">python_func</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2023/10/25/documents/">documents</a>
+          </li>
+        
+          <li>
             <a href="/Blog/2023/10/22/Javascript/">Javascript</a>
           </li>
         
@@ -300,10 +424,6 @@ url:分为绝对地址和相对地址
         
           <li>
             <a href="/Blog/2023/10/18/introduction/">Python</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/18/hello-world/">Hello World</a>
           </li>
         
       </ul>

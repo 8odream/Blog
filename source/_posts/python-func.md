@@ -1,7 +1,7 @@
 ---
 title: python_func
 date: 2023-10-25 09:12:34
-tags:Python
+tags: Python
 ---
 ### 自定义函数
 

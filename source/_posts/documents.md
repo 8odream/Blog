@@ -1,7 +1,7 @@
 ---
 title: documents
 date: 2023-10-25 08:06:22
-tags:Python
+tags: Python
 ---
 
 文件路径:

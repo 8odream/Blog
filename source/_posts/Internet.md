@@ -1,7 +1,7 @@
 ---
 title: Internet
 date: 2023-10-22 15:09:58
-tags:
+tags: Internet
 ---
 ### 网络相关知识
 

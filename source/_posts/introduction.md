@@ -1,7 +1,7 @@
 ---
 title: Python
 date: 2023-10-18 19:55:26
-tags:Python
+tags: Python
 ---
 
 ### Python 学习
