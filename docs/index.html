@@ -59,12 +59,12 @@
       <nav id="sub-nav">
         
         
-          <a class="nav-icon" href="/Blog/atom.xml" title="Flux RSS"><span class="fa fa-rss"></span></a>
+          <a class="nav-icon" href="/Blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Rechercher"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Rechercher"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
       </div>
     </div>
   </div>
@@ -72,6 +72,156 @@
 
       <div class="outer">
         <section id="main">
+  
+    <article id="post-tree-and-algorithm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Blog/2023/11/01/tree-and-algorithm/" class="article-date">
+  <time class="dt-published" datetime="2023-11-01T13:39:45.000Z" itemprop="datePublished">2023-11-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Blog/2023/11/01/tree-and-algorithm/">tree-and-algorithm</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p>树是图下的一个简单经典模型.树分为经典的二叉树和复杂的多叉树.二叉树就是一个最经典的例子:每一个节点下<strong>至多</strong>拥有两个叶子节点.</p>
+<p>实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line"></span><br><span class="line">A((A))</span><br><span class="line">B((B))</span><br><span class="line">C((C))</span><br><span class="line">D((D))</span><br><span class="line">E((E))</span><br><span class="line">F((F))</span><br><span class="line">G((G))</span><br><span class="line">A--&gt;B--&gt;D--&gt;E</span><br><span class="line">B--&gt;G</span><br><span class="line">D--&gt;F</span><br><span class="line">A--&gt;C</span><br></pre></td></tr></table></figure>
+
+<p>其中,A为根节点.B和C都称为A的子节点.</p>
+<h2 id="树的表示"><a href="#树的表示" class="headerlink" title="树的表示"></a>树的表示</h2><h3 id="表格数组法"><a href="#表格数组法" class="headerlink" title="表格数组法"></a>表格数组法</h3><p>对于一个树,我们有多种方法表示,其中较为方便的有矩阵表示法和链表表示法.</p>
+<p>例如,以下表为例(描述的就是上图),若左边的点能通往上边的点,则值为1,反之为0.</p>
+<table>
+<thead>
+<tr>
+<th>点</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+<th>G</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>D</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>E</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>F</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>G</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p>缺点很明显,就是占用内存太大,n个元素需要用到n^2^大小的内存占用,非常不划算.</p>
+<p>当然,这种方法也有其优点:可以表示更为复杂的图(无论单项还是双向,是否有环等)</p>
+<h3 id="指针法"><a href="#指针法" class="headerlink" title="指针法"></a>指针法</h3><p>这个方法很常见也很直观:就是将一个数据封装在一个包里,里面可以找到我们要的数据本体,也可以找到下一个链接的数据地址以便于找到下一个数据.用c语言可以用结构体来打包这个数据,用python可以用列表来模拟地址找到数据.以下给出c语言的实例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TreeData</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeData</span> *<span class="title">next</span>[2];</span>   <span class="comment">//定义指针域。每个数据最多包含两个子节点。如果只有一个节点，那么空节点可以定义为-1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">TreeData</span> <span class="title">tree</span>[7];</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        tree[i].num=i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    tree[<span class="number">0</span>].next[<span class="number">0</span>]=&amp;tree[<span class="number">1</span>],tree[<span class="number">0</span>].next[<span class="number">1</span>]=&amp;tree[<span class="number">2</span>];</span><br><span class="line">    <span class="comment">//对每个节点的指针域赋值，部分代码省略</span></span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> r=tree[<span class="number">0</span>].next[<span class="number">0</span>]-&gt;num;  <span class="comment">//例如，访问根节点的左节点的值</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,r);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="搜索方法"><a href="#搜索方法" class="headerlink" title="搜索方法"></a>搜索方法</h2><h3 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h3><p>二分法,就是在<strong>有顺序</strong>的一串数据里寻找需要的值.参考我们翻字典的时候,我们如果要找一个首字母为K的字词,我们不会从首页逐一翻页,而是可以快速先翻到靠近中间的位置来找,随后逐步缩小范围.当然,普通的二分法就是以1&#x2F;2为中介值,左右逐次对半寻找.在特定场景下,我们也有带有偏移变量的中介值(例如当变量趋近于正态分布)来加速寻找.</p>
+<h3 id="深度搜索"><a href="#深度搜索" class="headerlink" title="深度搜索"></a>深度搜索</h3><p>简单理解,就是搜索时”一条路走到黑”,触底后再反弹.我们一般遵循中序遍历的方式(根-左-右).例如,上面图中的树的检索顺序为:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line"></span><br><span class="line">A--&gt;B--&gt;D--&gt;E--&gt;F--&gt;G--&gt;C</span><br></pre></td></tr></table></figure>
+
+<p>这种搜索的应用场景常见于寻找需要的值时,一般需要遍历全部元素.<br>以下给出c语言的实例:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面的例子使用链表法表示树，并用于计算树的深度</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stddef.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">    <span class="type">int</span> num;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>[2];</span>   <span class="comment">//定义指针域。每个数据最多包含两个子节点。如果只有一个节点，那么空节点可以定义为-1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Search</span><span class="params">(<span class="keyword">struct</span> Node *node,<span class="type">int</span> *layer0)</span>&#123;</span><br><span class="line">    <span class="type">int</span> layer1=*layer0+<span class="number">1</span>,layer2=*layer0+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (node-&gt;next[<span class="number">0</span>])&#123;</span><br><span class="line">        Search(node-&gt;next[<span class="number">0</span>],&amp;layer1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node-&gt;next[<span class="number">1</span>])&#123;</span><br><span class="line">        Search(node-&gt;next[<span class="number">0</span>],&amp;layer2);</span><br><span class="line">    &#125;</span><br><span class="line">    *layer0=layer1&gt;layer2?layer1:layer2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="type">int</span> layer=<span class="number">0</span>;</span><br><span class="line">    <span class="comment">//给定树</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">tree</span>[7];</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">7</span>;i++)&#123;</span><br><span class="line">        tree[i].num=i;</span><br><span class="line">    &#125;</span><br><span class="line">    tree[<span class="number">0</span>].next[<span class="number">0</span>]=&amp;tree[<span class="number">1</span>];tree[<span class="number">0</span>].next[<span class="number">1</span>]=&amp;tree[<span class="number">2</span>];</span><br><span class="line">    tree[<span class="number">1</span>].next[<span class="number">0</span>]=&amp;tree[<span class="number">3</span>];tree[<span class="number">1</span>].next[<span class="number">1</span>]=&amp;tree[<span class="number">4</span>];</span><br><span class="line">    tree[<span class="number">2</span>].next[<span class="number">0</span>]=<span class="literal">NULL</span>;    tree[<span class="number">2</span>].next[<span class="number">1</span>]=<span class="literal">NULL</span>;</span><br><span class="line">    tree[<span class="number">3</span>].next[<span class="number">0</span>]=&amp;tree[<span class="number">5</span>];tree[<span class="number">3</span>].next[<span class="number">1</span>]=&amp;tree[<span class="number">6</span>];</span><br><span class="line">    tree[<span class="number">4</span>].next[<span class="number">0</span>]=<span class="literal">NULL</span>;    tree[<span class="number">4</span>].next[<span class="number">1</span>]=<span class="literal">NULL</span>;</span><br><span class="line">    tree[<span class="number">5</span>].next[<span class="number">0</span>]=<span class="literal">NULL</span>;    tree[<span class="number">5</span>].next[<span class="number">1</span>]=<span class="literal">NULL</span>;</span><br><span class="line">    tree[<span class="number">6</span>].next[<span class="number">0</span>]=<span class="literal">NULL</span>;    tree[<span class="number">6</span>].next[<span class="number">1</span>]=<span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line">    Search(&amp;tree[<span class="number">0</span>],&amp;layer);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,layer);</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然,还有更为经典的写法:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//给定结构体和预处理命令，略</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Search</span><span class="params">(<span class="keyword">struct</span> Node *node,<span class="type">int</span> *layer,<span class="type">int</span> cnt)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(node==<span class="literal">NULL</span>)&#123;</span><br><span class="line">        *layer=*layer&gt;cnt?*layer:cnt;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cnt++;</span><br><span class="line">    Search(node-&gt;next[<span class="number">0</span>],layer,cnt);</span><br><span class="line">    Search(node-&gt;next[<span class="number">1</span>],layer,cnt);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="comment">//给定树,代码略</span></span><br><span class="line">    <span class="type">int</span> layer=<span class="number">0</span>;</span><br><span class="line">    Search(&amp;tree[<span class="number">0</span>],&amp;layer,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="广度搜索"><a href="#广度搜索" class="headerlink" title="广度搜索"></a>广度搜索</h3><p>广度搜索就是以层为方向,逐一遍历单层的各个数据,从而找出可能的”最短路径”.经典的问题有最短公交换乘问题.</p>
+<p>我们的做法是,遍历一层的数据时,将下一层的数据放入”需要被遍历”的”缓冲区”.</p>
+<p>以下给出Python的实例:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">tree=[[0,[1,2]],[1,[3,4]],[2,[-1,-1]],[3,[5,6]],[4,[-1,-1]],[5,[-1,-1]],[6,[-1,-1]]] #每个节点包含一个数据和一个模拟链表指针</span><br><span class="line">process=[0] #将要运行的顺序,最先运行索引为0的节点</span><br><span class="line"></span><br><span class="line">i=0</span><br><span class="line">while not(tree[process[i]][1][0]==-1 and tree[process[i]][1][1]==-1):</span><br><span class="line">    if tree[process[i]][1][0]!=-1:</span><br><span class="line">        process.append(tree[process[i]][1][0])</span><br><span class="line">    if tree[process[i]][1][1]!=-1:</span><br><span class="line">        process.append(tree[process[i]][1][1])</span><br><span class="line">    i+=1</span><br><span class="line">#下面的代码将检查的节点数转换为层数</span><br><span class="line">t=0</span><br><span class="line">k=1</span><br><span class="line">while(t&lt;=i):</span><br><span class="line">    t+=k</span><br><span class="line">    k+=1</span><br><span class="line">print(k-1,&quot;层&quot;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://8odream.github.io/Blog/2023/11/01/tree-and-algorithm/" data-id="cloi4qmdt0000tc6zcwzs9mlr" data-title="tree-and-algorithm" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
   
     <article id="post-py-stuffs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
@@ -110,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/py-stuffs/" data-id="clo5japvo0000ag6z5ll002g8" data-title="py_stuffs" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/py-stuffs/" data-id="clo5japvo0000ag6z5ll002g8" data-title="py_stuffs" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -154,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/sorting/" data-id="clo5japvp0001ag6zhy92e3g3" data-title="sorting" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/sorting/" data-id="clo5japvp0001ag6zhy92e3g3" data-title="sorting" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -207,7 +357,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -252,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/documents/" data-id="clo55njqb00023g6zgs6fez6z" data-title="documents" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/documents/" data-id="clo55njqb00023g6zgs6fez6z" data-title="documents" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -302,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/22/Javascript/" data-id="clo16nzo200003w6z7b4h1ocz" data-title="Javascript" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/22/Javascript/" data-id="clo16nzo200003w6z7b4h1ocz" data-title="Javascript" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -352,7 +502,7 @@ url:分为绝对地址和相对地址
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/22/Internet/" data-id="clo16nzo600013w6ze1uhdrnu" data-title="Internet" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/22/Internet/" data-id="clo16nzo600013w6ze1uhdrnu" data-title="Internet" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -394,7 +544,7 @@ url:分为绝对地址和相对地址
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/18/introduction/" data-id="clnvp750z0000es6z4y8w6p6y" data-title="Python" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/18/introduction/" data-id="clnvp750z0000es6z4y8w6p6y" data-title="Python" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -447,7 +597,7 @@ url:分为绝对地址和相对地址
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/18/hello-world/" data-id="clnvoxdbp0000rk6zcc2m77n9" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Partager</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/18/hello-world/" data-id="clnvoxdbp0000rk6zcc2m77n9" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
       
       
       
@@ -470,9 +620,9 @@ url:分为绝对地址和相对地址
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
     </div>
   </div>
 
@@ -480,18 +630,18 @@ url:分为绝对地址和相对地址
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a>
+      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 10px;">algorithm</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/10/">October 2023</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/10/">October 2023</a></li></ul>
     </div>
   </div>
 
@@ -499,9 +649,13 @@ url:分为绝对地址和相对地址
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/Blog/2023/11/01/tree-and-algorithm/">tree-and-algorithm</a>
+          </li>
         
           <li>
             <a href="/Blog/2023/10/25/py-stuffs/">py_stuffs</a>
@@ -519,10 +673,6 @@ url:分为绝对地址和相对地址
             <a href="/Blog/2023/10/25/documents/">documents</a>
           </li>
         
-          <li>
-            <a href="/Blog/2023/10/22/Javascript/">Javascript</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -537,7 +687,7 @@ url:分为绝对地址和相对地址
     <div id="footer-info" class="inner">
       
       &copy; 2023 John Doe<br>
-      Propulsé par <a href="https://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
