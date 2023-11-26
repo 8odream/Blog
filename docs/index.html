@@ -73,6 +73,118 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Blog/2023/11/19/git/" class="article-date">
+  <time class="dt-published" datetime="2023-11-19T07:14:05.000Z" itemprop="datePublished">2023-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Blog/2023/11/19/git/">git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>设置用户信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;Your Name&quot;</span></span><br><span class="line">git config --global user.email <span class="string">&quot;your.email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>查看配置的用户信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global  --list </span><br></pre></td></tr></table></figure>
+
+<p>初始化当前文件夹为仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init </span><br></pre></td></tr></table></figure>
+
+<p>文件创建操作</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> my_project <span class="comment">#创建一个叫my_project的文件夹。使用mkdir -p 可以创建多层文件夹</span></span><br><span class="line"><span class="built_in">cd</span> my_project <span class="comment">#转到my_project文件夹。之后可以使用git init指令设置仓库。cd意为change direction</span></span><br></pre></td></tr></table></figure>
+
+<p>查看当前仓库信息</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">local</span>  --list </span><br></pre></td></tr></table></figure>
+
+<p>添加绑定远程仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin [远程仓库URL]//</span><br></pre></td></tr></table></figure>
+
+<p>添加文件到暂存区</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add README.md</span><br></pre></td></tr></table></figure>
+
+<p>推送到远程仓库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>拉取项目注意需要的话用cd指令切换本地目标文件夹</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> [远程仓库URL] <span class="comment">#会在当前文件夹下创建一个项目同名的文件夹，里面才是项目源代码</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://8odream.github.io/Blog/2023/11/19/git/" data-id="clpf741wa0000o06zfbnccngh" data-title="git" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/git/" rel="tag">git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-difficulties" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/Blog/2023/11/19/difficulties/" class="article-date">
+  <time class="dt-published" datetime="2023-11-19T02:12:50.000Z" itemprop="datePublished">2023-11-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/Blog/2023/11/19/difficulties/">difficulties</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="解决可能出现的数据过大问题"><a href="#解决可能出现的数据过大问题" class="headerlink" title="解决可能出现的数据过大问题"></a>解决可能出现的数据过大问题</h3><ul>
+<li><p>暴力开大范围类型</p>
+</li>
+<li><p>整体迭代</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://8odream.github.io/Blog/2023/11/19/difficulties/" data-id="clpf741wk0003o06zadwm2c6v" data-title="difficulties" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-py-GUI" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/Blog/2023/11/15/py-GUI/" class="article-date">
@@ -350,17 +462,36 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>zip(list1,list2)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3],b=[4,5,6]</span><br><span class="line">c=list(zip(a,b))</span><br><span class="line">#c=[(1,4),(2,5),(3,6)]</span><br></pre></td></tr></table></figure>
+        <ul>
+<li>可迭代:变量是可以迭代的,而整形数字等常量是不可迭代的.许多函数都需要接受可迭代的变量作为参数</li>
+</ul>
+<p>字典性质</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">d=dict(k1=&#x27;v1&#x27;, k2=&#x27;v2&#x27;, k3=&#x27;v3&#x27;) #这种格式相当于用花括号创建字典，但键不需要引号，比如 d=&#123;‘k1’: ‘v1’, ‘k2’: ‘v2’, ‘k3’: ‘v3’&#125;，</span><br><span class="line">d=dict([()])</span><br><span class="line"></span><br><span class="line">&#x27;k1&#x27; in d # True</span><br><span class="line">&#x27;v1&#x27; in d # False。表明in方法检查的是键而不是值</span><br><span class="line"></span><br><span class="line">&#x27;v1&#x27; in d.values() #True。注意，d.values()返回的是dict_values对象，可以用list()转换成列表</span><br><span class="line">(&#x27;k1&#x27;, &#x27;v1&#x27;) in d.items() #True。注意，d.values()返回的是dict_items对象，可以用list()转换成列表</span><br><span class="line"></span><br><span class="line">d.get(&#x27;key&#x27;) #None</span><br><span class="line">#d[&#x27;key&#x27;] 报错</span><br><span class="line">d.get(&#x27;key&#x27;,&#x27;value&#x27;) #若d[&#x27;key&#x27;]存在，则返回d[&#x27;key&#x27;]的值，否则返回默认值&#x27;value&#x27;</span><br><span class="line"></span><br><span class="line">d.setdefault(&#x27;k4&#x27;,&#x27;v4&#x27;) #&#x27;v4&#x27;。若键不存在，则添加对应的键和值，并返回新值。第二个值默认为None，可以省略</span><br><span class="line">d.setdefault(&#x27;k1&#x27;,&#x27;v4&#x27;) #&#x27;v1&#x27;。若键存在，则返回对应的值，且不执行别的操作</span><br><span class="line"></span><br><span class="line">d.pop(&#x27;k4&#x27;,&#x27;value&#x27;) #&#x27;v4&#x27;。若键存在，则删除该键，并返回先前对应的键值。此时第二个数值可以省略</span><br><span class="line">d.pop(&#x27;k4&#x27;,&#x27;value&#x27;) #&#x27;value&#x27;。若键不存在，则返回规定的默认的键值。姿势第二个数值不可忽略，否则报错</span><br><span class="line"></span><br><span class="line">d.clear()</span><br><span class="line">d #&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>集合</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s=&#123;1,2,3&#125; #s=&#123;&#125;创建的是字典而不是集合。</span><br><span class="line">s=set(&#x27;123&#x27;) #只能接受可迭代变量。可以为空，创建空字典</span><br></pre></td></tr></table></figure>
+
+<p>zip(list1,list2)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3],b=[4,5,6]</span><br><span class="line">c=list(zip(a,b))</span><br><span class="line"><span class="comment">#c=[(1,4),(2,5),(3,6)]</span></span><br></pre></td></tr></table></figure>
+
+<p>isinstance(value,type)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;isinstance(1.1+0j,<span class="built_in">float</span>) </span><br><span class="line">False</span><br></pre></td></tr></table></figure>
 
 <p>eval(str)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval(&quot;1+2*3/4&quot;)</span><br><span class="line">#2.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">eval</span>(<span class="string">&quot;1+2*3/4&quot;</span>)</span><br><span class="line">2.5</span><br></pre></td></tr></table></figure>
 
 <p>exec(str)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec(&quot;print(&quot;hello,world&quot;)&quot;)</span><br><span class="line">#hello,world</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">exec</span>(<span class="string">&quot;print(&quot;</span>hello,world<span class="string">&quot;)&quot;</span>)</span><br><span class="line">hello,world</span><br></pre></td></tr></table></figure>
 
 <p>all() 与逻辑的函数版本</p>
 <p>any() 或逻辑的函数版本</p>
+<p>id(var)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;pi=3.14</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">id</span>(pi)</span><br><span class="line">1458273010640</span><br><span class="line">&gt;&gt;&gt;k=3.14</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">id</span>(k)</span><br><span class="line">1458273025264</span><br></pre></td></tr></table></figure>
+
+<p>模块:</p>
+<ul>
+<li>模块中定义的常量可以被修改</li>
+</ul>
 
       
     </div>
@@ -404,7 +535,7 @@
         <h3 id="sort函数"><a href="#sort函数" class="headerlink" title="sort函数"></a>sort函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#实例</span><br><span class="line">list.sort(key=lambda x:len(x),reverse=1)</span><br></pre></td></tr></table></figure>
 
 <p>sort函数默认为升序排列.key为排序的依据,reverse确认是否反转.这两个参数都可以省略.</p>
-<p>这里使用了lambda函数来按照进行list内部元素的长度为依据来排序.</p>
+<p>这里使用了lambda函数来按照进行list内部元素的长度为依据来排序.sort函数和map函数可以类比,key中的参数x实际上是list中的每一个元素.</p>
 
       
     </div>
@@ -445,15 +576,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数</span><br><span class="line">    */ Code /*  #pass 占位语句，用于打框架时占位提示代码未完成</span><br><span class="line">    return return_value</span><br></pre></td></tr></table></figure>
+        <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数</span><br><span class="line">    */ Code /*  #pass 占位语句，用于打框架时占位提示代码未完成</span><br><span class="line">    return return_value </span><br></pre></td></tr></table></figure>
 
 <p>注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这样做.可以加globle显式声明使用全局变量),不可被主函数或其他外部函数使用.用完即销.函数内定义的函数同样遵循这一规则.</p>
-<p>1.函数可以没有return值.<br>2.函数可以自我调用递归.<br>3.函数内可以使用其他自定义函数.</p>
+<p>1.函数可以没有return值.默认返回None.<br>2.函数可以自我调用递归.<br>3.函数内可以使用其他自定义函数.</p>
 <p>可变长参数:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def func1(a,*b):   #b为元组。传入元组时可以不带括号</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">def func2(c,**d):   #d为字典</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 
-<p>函数参数:</p>
+<p>函数参数:如果一个函数接受另一个函数作为参数，那么这个函数就可以称为高阶函数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def f(function,a,b):</span><br><span class="line">    &#x27;&#x27;&#x27;return function(a)+function(b)&#x27;&#x27;&#x27;</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<p>若参数是关键字参数，那么传入的顺序可以和定义时的不一致，只要指定了参数的名称即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def func(a,b,c=1,d=2): #默认的参数必须放在最后</span><br><span class="line">    print(a,b,c,d)</span><br><span class="line">func(b=2,a=1) # 传入两个关键字参数</span><br><span class="line"># 1 2 1 2</span><br></pre></td></tr></table></figure>
 
 <h3 id="匿名函数lambda"><a href="#匿名函数lambda" class="headerlink" title="匿名函数lambda"></a>匿名函数lambda</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func_name=lambda pass_arguments: return_value #code,可省略#</span><br></pre></td></tr></table></figure>
 
@@ -571,98 +705,6 @@
 
 
   
-    <article id="post-Internet" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/Blog/2023/10/22/Internet/" class="article-date">
-  <time class="dt-published" datetime="2023-10-22T07:09:58.000Z" itemprop="datePublished">2023-10-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/Blog/2023/10/22/Internet/">Internet</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="网络相关知识"><a href="#网络相关知识" class="headerlink" title="网络相关知识"></a>网络相关知识</h3><p>URL(Uniform Resource Locator):域名,用于发送给dns服务器查询ip地址</p>
-<p>DNS:用于解析ip的服务器</p>
-<p>IP</p>
-<p>–ipv4:四位 0-255 无法直接被公网找到</p>
-<p>–ipv6:六位 包含数字和字母 可以被公网直接定位</p>
-<p>PORT:端口,用于一个ip设备的不同发送或接收信息口,避免数据混乱</p>
-<h2 id="href-url-src有什么区别"><a href="#href-url-src有什么区别" class="headerlink" title="href,url,src有什么区别?"></a>href,url,src有什么区别?</h2><pre><code>href(Hypertext Reference):相当于是硬性的外部链接,一般不修改
-src(Source):引用的资源
-url:分为绝对地址和相对地址
-</code></pre>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/22/Internet/" data-id="clo16nzo600013w6ze1uhdrnu" data-title="Internet" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-introduction" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/Blog/2023/10/18/introduction/" class="article-date">
-  <time class="dt-published" datetime="2023-10-18T11:55:26.000Z" itemprop="datePublished">2023-10-18</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/Blog/2023/10/18/introduction/">Python</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Python-学习"><a href="#Python-学习" class="headerlink" title="Python 学习"></a>Python 学习</h3><p>部分函数的使用:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#map(func,*list)</span><br><span class="line">#典型例子</span><br><span class="line">li=list(map(int,input().split()))</span><br><span class="line">#将一行中输入的以空格为间隔的数字串储存在li列表中</span><br><span class="line">#注意，map函数的返回值是一个迭代器类型</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/18/introduction/" data-id="clnvp750z0000es6z4y8w6p6y" data-title="Python" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -681,7 +723,7 @@ url:分为绝对地址和相对地址
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/git/" rel="tag">git</a></li></ul>
     </div>
   </div>
 
@@ -691,7 +733,7 @@ url:分为绝对地址和相对地址
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a>
+      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/Blog/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -713,6 +755,14 @@ url:分为绝对地址和相对地址
       <ul>
         
           <li>
+            <a href="/Blog/2023/11/19/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2023/11/19/difficulties/">difficulties</a>
+          </li>
+        
+          <li>
             <a href="/Blog/2023/11/15/py-GUI/">py-GUI</a>
           </li>
         
@@ -722,14 +772,6 @@ url:分为绝对地址和相对地址
         
           <li>
             <a href="/Blog/2023/11/01/tree-and-algorithm/">tree-and-algorithm</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/py-stuffs/">py_stuffs</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/sorting/">sorting</a>
           </li>
         
       </ul>

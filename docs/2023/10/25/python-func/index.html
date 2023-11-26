@@ -6,15 +6,15 @@
   
   <title>python_func | 8odream的小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="自定义函数123def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数    *&#x2F; Code &#x2F;*  #pass 占位语句，用于打框架时占位提示代码未完成    return return_value  注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这">
+  <meta name="description" content="自定义函数123def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数    *&#x2F; Code &#x2F;*  #pass 占位语句，用于打框架时占位提示代码未完成    return return_value   注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python_func">
 <meta property="og:url" content="https://8odream.github.io/Blog/2023/10/25/python-func/index.html">
 <meta property="og:site_name" content="8odream的小窝">
-<meta property="og:description" content="自定义函数123def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数    *&#x2F; Code &#x2F;*  #pass 占位语句，用于打框架时占位提示代码未完成    return return_value  注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这">
+<meta property="og:description" content="自定义函数123def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数    *&#x2F; Code &#x2F;*  #pass 占位语句，用于打框架时占位提示代码未完成    return return_value   注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-10-25T01:12:34.000Z">
-<meta property="article:modified_time" content="2023-10-25T02:59:41.646Z">
+<meta property="article:modified_time" content="2023-11-20T13:24:35.784Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -98,15 +98,18 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数</span><br><span class="line">    */ Code /*  #pass 占位语句，用于打框架时占位提示代码未完成</span><br><span class="line">    return return_value</span><br></pre></td></tr></table></figure>
+        <h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def function_name(arguments):  #传入的参数可以默认赋值，且可以在传入时不传入已经赋值的内容，或者可以用对应的语句重新赋值对应参数</span><br><span class="line">    */ Code /*  #pass 占位语句，用于打框架时占位提示代码未完成</span><br><span class="line">    return return_value </span><br></pre></td></tr></table></figure>
 
 <p>注意,自定义函数内定义的变量为局部变量(变量名可以和主函数的变量重复且不干扰.但是不推荐这样做.可以加globle显式声明使用全局变量),不可被主函数或其他外部函数使用.用完即销.函数内定义的函数同样遵循这一规则.</p>
-<p>1.函数可以没有return值.<br>2.函数可以自我调用递归.<br>3.函数内可以使用其他自定义函数.</p>
+<p>1.函数可以没有return值.默认返回None.<br>2.函数可以自我调用递归.<br>3.函数内可以使用其他自定义函数.</p>
 <p>可变长参数:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def func1(a,*b):   #b为元组。传入元组时可以不带括号</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">def func2(c,**d):   #d为字典</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 
-<p>函数参数:</p>
+<p>函数参数:如果一个函数接受另一个函数作为参数，那么这个函数就可以称为高阶函数</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def f(function,a,b):</span><br><span class="line">    &#x27;&#x27;&#x27;return function(a)+function(b)&#x27;&#x27;&#x27;</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
+
+<p>若参数是关键字参数，那么传入的顺序可以和定义时的不一致，只要指定了参数的名称即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def func(a,b,c=1,d=2): #默认的参数必须放在最后</span><br><span class="line">    print(a,b,c,d)</span><br><span class="line">func(b=2,a=1) # 传入两个关键字参数</span><br><span class="line"># 1 2 1 2</span><br></pre></td></tr></table></figure>
 
 <h3 id="匿名函数lambda"><a href="#匿名函数lambda" class="headerlink" title="匿名函数lambda"></a>匿名函数lambda</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">func_name=lambda pass_arguments: return_value #code,可省略#</span><br></pre></td></tr></table></figure>
 
@@ -159,7 +162,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/git/" rel="tag">git</a></li></ul>
     </div>
   </div>
 
@@ -169,7 +172,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a>
+      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/Blog/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -191,6 +194,14 @@
       <ul>
         
           <li>
+            <a href="/Blog/2023/11/19/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2023/11/19/difficulties/">difficulties</a>
+          </li>
+        
+          <li>
             <a href="/Blog/2023/11/15/py-GUI/">py-GUI</a>
           </li>
         
@@ -200,14 +211,6 @@
         
           <li>
             <a href="/Blog/2023/11/01/tree-and-algorithm/">tree-and-algorithm</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/py-stuffs/">py_stuffs</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/sorting/">sorting</a>
           </li>
         
       </ul>

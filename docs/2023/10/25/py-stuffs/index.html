@@ -6,15 +6,15 @@
   
   <title>py_stuffs | 8odream的小窝</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="zip(list1,list2) 123a&#x3D;[1,2,3],b&#x3D;[4,5,6]c&#x3D;list(zip(a,b))#c&#x3D;[(1,4),(2,5),(3,6)]  eval(str) 12eval(&quot;1+2*3&#x2F;4&quot;)#2.5  exec(str) 12exec(&quot;print(&quot;hello,world&quot;)&quot;)#hello,world  all(">
+  <meta name="description" content="可迭代:变量是可以迭代的,而整形数字等常量是不可迭代的.许多函数都需要接受可迭代的变量作为参数  字典性质 12345678910111213141516171819202122d&#x3D;dict(k1&#x3D;&amp;#x27;v1&amp;#x27;, k2&#x3D;&amp;#x27;v2&amp;#x27;, k3&#x3D;&amp;#x27;v3&amp;#x27;) #这种格式相当于用花括号创建字典，但键不需要引号，比如 d&#x3D;&amp;#123;‘k1’: ‘v1’">
 <meta property="og:type" content="article">
 <meta property="og:title" content="py_stuffs">
 <meta property="og:url" content="https://8odream.github.io/Blog/2023/10/25/py-stuffs/index.html">
 <meta property="og:site_name" content="8odream的小窝">
-<meta property="og:description" content="zip(list1,list2) 123a&#x3D;[1,2,3],b&#x3D;[4,5,6]c&#x3D;list(zip(a,b))#c&#x3D;[(1,4),(2,5),(3,6)]  eval(str) 12eval(&quot;1+2*3&#x2F;4&quot;)#2.5  exec(str) 12exec(&quot;print(&quot;hello,world&quot;)&quot;)#hello,world  all(">
+<meta property="og:description" content="可迭代:变量是可以迭代的,而整形数字等常量是不可迭代的.许多函数都需要接受可迭代的变量作为参数  字典性质 12345678910111213141516171819202122d&#x3D;dict(k1&#x3D;&amp;#x27;v1&amp;#x27;, k2&#x3D;&amp;#x27;v2&amp;#x27;, k3&#x3D;&amp;#x27;v3&amp;#x27;) #这种格式相当于用花括号创建字典，但键不需要引号，比如 d&#x3D;&amp;#123;‘k1’: ‘v1’">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-10-25T03:21:29.000Z">
-<meta property="article:modified_time" content="2023-10-25T03:32:42.757Z">
+<meta property="article:modified_time" content="2023-11-22T00:53:36.932Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -98,17 +98,36 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>zip(list1,list2)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3],b=[4,5,6]</span><br><span class="line">c=list(zip(a,b))</span><br><span class="line">#c=[(1,4),(2,5),(3,6)]</span><br></pre></td></tr></table></figure>
+        <ul>
+<li>可迭代:变量是可以迭代的,而整形数字等常量是不可迭代的.许多函数都需要接受可迭代的变量作为参数</li>
+</ul>
+<p>字典性质</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">d=dict(k1=&#x27;v1&#x27;, k2=&#x27;v2&#x27;, k3=&#x27;v3&#x27;) #这种格式相当于用花括号创建字典，但键不需要引号，比如 d=&#123;‘k1’: ‘v1’, ‘k2’: ‘v2’, ‘k3’: ‘v3’&#125;，</span><br><span class="line">d=dict([()])</span><br><span class="line"></span><br><span class="line">&#x27;k1&#x27; in d # True</span><br><span class="line">&#x27;v1&#x27; in d # False。表明in方法检查的是键而不是值</span><br><span class="line"></span><br><span class="line">&#x27;v1&#x27; in d.values() #True。注意，d.values()返回的是dict_values对象，可以用list()转换成列表</span><br><span class="line">(&#x27;k1&#x27;, &#x27;v1&#x27;) in d.items() #True。注意，d.values()返回的是dict_items对象，可以用list()转换成列表</span><br><span class="line"></span><br><span class="line">d.get(&#x27;key&#x27;) #None</span><br><span class="line">#d[&#x27;key&#x27;] 报错</span><br><span class="line">d.get(&#x27;key&#x27;,&#x27;value&#x27;) #若d[&#x27;key&#x27;]存在，则返回d[&#x27;key&#x27;]的值，否则返回默认值&#x27;value&#x27;</span><br><span class="line"></span><br><span class="line">d.setdefault(&#x27;k4&#x27;,&#x27;v4&#x27;) #&#x27;v4&#x27;。若键不存在，则添加对应的键和值，并返回新值。第二个值默认为None，可以省略</span><br><span class="line">d.setdefault(&#x27;k1&#x27;,&#x27;v4&#x27;) #&#x27;v1&#x27;。若键存在，则返回对应的值，且不执行别的操作</span><br><span class="line"></span><br><span class="line">d.pop(&#x27;k4&#x27;,&#x27;value&#x27;) #&#x27;v4&#x27;。若键存在，则删除该键，并返回先前对应的键值。此时第二个数值可以省略</span><br><span class="line">d.pop(&#x27;k4&#x27;,&#x27;value&#x27;) #&#x27;value&#x27;。若键不存在，则返回规定的默认的键值。姿势第二个数值不可忽略，否则报错</span><br><span class="line"></span><br><span class="line">d.clear()</span><br><span class="line">d #&#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>集合</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s=&#123;1,2,3&#125; #s=&#123;&#125;创建的是字典而不是集合。</span><br><span class="line">s=set(&#x27;123&#x27;) #只能接受可迭代变量。可以为空，创建空字典</span><br></pre></td></tr></table></figure>
+
+<p>zip(list1,list2)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=[1,2,3],b=[4,5,6]</span><br><span class="line">c=list(zip(a,b))</span><br><span class="line"><span class="comment">#c=[(1,4),(2,5),(3,6)]</span></span><br></pre></td></tr></table></figure>
+
+<p>isinstance(value,type)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;isinstance(1.1+0j,<span class="built_in">float</span>) </span><br><span class="line">False</span><br></pre></td></tr></table></figure>
 
 <p>eval(str)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval(&quot;1+2*3/4&quot;)</span><br><span class="line">#2.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">eval</span>(<span class="string">&quot;1+2*3/4&quot;</span>)</span><br><span class="line">2.5</span><br></pre></td></tr></table></figure>
 
 <p>exec(str)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exec(&quot;print(&quot;hello,world&quot;)&quot;)</span><br><span class="line">#hello,world</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="built_in">exec</span>(<span class="string">&quot;print(&quot;</span>hello,world<span class="string">&quot;)&quot;</span>)</span><br><span class="line">hello,world</span><br></pre></td></tr></table></figure>
 
 <p>all() 与逻辑的函数版本</p>
 <p>any() 或逻辑的函数版本</p>
+<p>id(var)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;pi=3.14</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">id</span>(pi)</span><br><span class="line">1458273010640</span><br><span class="line">&gt;&gt;&gt;k=3.14</span><br><span class="line">&gt;&gt;&gt;<span class="built_in">id</span>(k)</span><br><span class="line">1458273025264</span><br></pre></td></tr></table></figure>
+
+<p>模块:</p>
+<ul>
+<li>模块中定义的常量可以被修改</li>
+</ul>
 
       
     </div>
@@ -157,7 +176,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Internet/" rel="tag">Internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Javascript/" rel="tag">Javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/Python/" rel="tag">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/algorithm/" rel="tag">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/Blog/tags/git/" rel="tag">git</a></li></ul>
     </div>
   </div>
 
@@ -167,7 +186,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a>
+      <a href="/Blog/tags/Internet/" style="font-size: 10px;">Internet</a> <a href="/Blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/Blog/tags/Python/" style="font-size: 20px;">Python</a> <a href="/Blog/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/Blog/tags/git/" style="font-size: 10px;">git</a>
     </div>
   </div>
 
@@ -189,6 +208,14 @@
       <ul>
         
           <li>
+            <a href="/Blog/2023/11/19/git/">git</a>
+          </li>
+        
+          <li>
+            <a href="/Blog/2023/11/19/difficulties/">difficulties</a>
+          </li>
+        
+          <li>
             <a href="/Blog/2023/11/15/py-GUI/">py-GUI</a>
           </li>
         
@@ -198,14 +225,6 @@
         
           <li>
             <a href="/Blog/2023/11/01/tree-and-algorithm/">tree-and-algorithm</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/py-stuffs/">py_stuffs</a>
-          </li>
-        
-          <li>
-            <a href="/Blog/2023/10/25/sorting/">sorting</a>
           </li>
         
       </ul>
