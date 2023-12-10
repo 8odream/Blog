@@ -61,10 +61,10 @@
         
           <a class="nav-icon" href="/Blog/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://8odream.github.io/Blog"></form>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/28/notes/" data-id="clpzm4hft0001hc6z4p8bepxq" data-title="notes" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/28/notes/" data-id="clpzm4hft0001hc6z4p8bepxq" data-title="notes" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -218,14 +218,13 @@
 <p>接下来使用requests和json模块处理,处理”浙能电力”这一股票:</p>
 <figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36&#x27;</span>&#125;</span><br><span class="line">web=requests.get(<span class="string">&quot;https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351049610706292989315_1702212722432&amp;secid=1.600023&amp;ut=fa5fd1943c7b386f172d6893dbfba10b&amp;fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&amp;fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&amp;klt=101&amp;fqt=1&amp;beg=0&amp;end=20500101&amp;smplmt=460&amp;lmt=1000000&amp;_=1702212722433&quot;</span>,headers=headers)</span><br><span class="line">web.encoding=<span class="string">&quot;UTF-8&quot;</span></span><br><span class="line">text=web.text  <span class="comment">#.text参数获取源代码</span></span><br><span class="line"></span><br><span class="line">text_=json.loads(text[<span class="number">42</span>:-<span class="number">2</span>]) <span class="comment">#从第四十二位截断，去除噪音直到倒数第三位，去除多余的括号和分号</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>((text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>][-<span class="number">1</span>]).split(<span class="string">&quot;,&quot;</span>)[<span class="number">3</span>]) <span class="comment">#获取最新的涨跌幅数据</span></span><br></pre></td></tr></table></figure>
 
-
 <p>处理获取所有股票涨跌的实例:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">999999</span>+<span class="number">1</span>):</span><br><span class="line">    code=<span class="built_in">str</span>(<span class="string">&quot;%06d&quot;</span>%i)</span><br><span class="line">    web=requests.get(<span class="string">&quot;https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351049610706292989315_1702212722432&amp;secid=1.&quot;</span>+code+<span class="string">&quot;&amp;ut=fa5fd1943c7b386f172d6893dbfba10b&amp;fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&amp;fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&amp;klt=101&amp;fqt=1&amp;beg=0&amp;end=20500101&amp;smplmt=460&amp;lmt=1000000&amp;_=1702212722433&quot;</span>,headers=headers)</span><br><span class="line">    web.encoding=<span class="string">&quot;UTF-8&quot;</span></span><br><span class="line">    text=web.text  <span class="comment">#.text参数获取源代码</span></span><br><span class="line"></span><br><span class="line">    text_=json.loads(text[<span class="number">42</span>:-<span class="number">2</span>]) <span class="comment">#从第四十二位截断，去除噪音直到倒数第三位，去除多余的括号和分号</span></span><br><span class="line"></span><br><span class="line">    check=<span class="built_in">len</span>(text <span class="keyword">or</span> text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>]==[]) <span class="comment">#国债以及不存在的股票没有数据，跳过</span></span><br><span class="line">    <span class="keyword">if</span> check&lt;<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    flag=-<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">float</span>(text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>][-<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[-<span class="number">2</span>])&gt;=<span class="number">0</span>:</span><br><span class="line">        flag=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;今日该代码:&quot;</span>,code,<span class="string">&quot;股票涨跌:&quot;</span>,<span class="built_in">float</span>(text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>][-<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">3</span>])*flag)</span><br><span class="line">    time.sleep(<span class="number">1</span>) <span class="comment">#使用sleep防止被ban</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">headers=&#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">999999</span>+<span class="number">1</span>):</span><br><span class="line">    code=<span class="built_in">str</span>(<span class="string">&quot;%06d&quot;</span>%i)</span><br><span class="line">    web=requests.get(<span class="string">&quot;https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351049610706292989315_1702212722432&amp;secid=1.&quot;</span>+code+<span class="string">&quot;&amp;ut=fa5fd1943c7b386f172d6893dbfba10b&amp;fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&amp;fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&amp;klt=101&amp;fqt=1&amp;beg=0&amp;end=20500101&amp;smplmt=460&amp;lmt=1000000&amp;_=1702212722433&quot;</span>,headers=headers)</span><br><span class="line">    web.encoding=<span class="string">&quot;UTF-8&quot;</span></span><br><span class="line">    text=web.text  <span class="comment">#.text参数获取源代码</span></span><br><span class="line"></span><br><span class="line">    text_=json.loads(text[<span class="number">42</span>:-<span class="number">2</span>]) <span class="comment">#从第四十二位截断，去除噪音直到倒数第三位，去除多余的括号和分号</span></span><br><span class="line"></span><br><span class="line">    check=<span class="built_in">len</span>(text) <span class="comment">#国债以及不存在的股票没有数据，跳过</span></span><br><span class="line">    <span class="keyword">if</span> check <span class="keyword">or</span> text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>]==[]&lt;<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    flag=-<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">float</span>(text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>][-<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[-<span class="number">2</span>])&gt;=<span class="number">0</span>:</span><br><span class="line">        flag=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;今日该代码:&quot;</span>,code,<span class="string">&quot;股票涨跌:&quot;</span>,<span class="built_in">float</span>(text_[<span class="string">&quot;data&quot;</span>][<span class="string">&quot;klines&quot;</span>][-<span class="number">1</span>].split(<span class="string">&quot;,&quot;</span>)[<span class="number">3</span>])*flag)</span><br><span class="line">    time.sleep(<span class="number">1</span>) <span class="comment">#使用sleep防止被ban</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/26/py-Crawler/" data-id="clpzm4hfq0000hc6z9tf05aui" data-title="py-Crawler" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/26/py-Crawler/" data-id="clpzm4hfq0000hc6z9tf05aui" data-title="py-Crawler" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -291,7 +290,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/19/git/" data-id="clpf741wa0000o06zfbnccngh" data-title="git" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/19/git/" data-id="clpf741wa0000o06zfbnccngh" data-title="git" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -337,7 +336,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/19/difficulties/" data-id="clpf741wk0003o06zadwm2c6v" data-title="difficulties" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/19/difficulties/" data-id="clpf741wk0003o06zadwm2c6v" data-title="difficulties" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -399,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/15/py-GUI/" data-id="cloz6opuz0001mc6zfyt5gk7d" data-title="py-GUI" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/15/py-GUI/" data-id="cloz6opuz0001mc6zfyt5gk7d" data-title="py-GUI" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -442,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/03/algorithm-questions-volume/" data-id="cloz6opuw0000mc6z7gvs59h8" data-title="algorithm-questions-volume" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/03/algorithm-questions-volume/" data-id="cloz6opuw0000mc6z7gvs59h8" data-title="algorithm-questions-volume" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -592,7 +591,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/11/01/tree-and-algorithm/" data-id="cloi4qmdt0000tc6zcwzs9mlr" data-title="tree-and-algorithm" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/11/01/tree-and-algorithm/" data-id="cloi4qmdt0000tc6zcwzs9mlr" data-title="tree-and-algorithm" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -662,7 +661,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/py-stuffs/" data-id="clo5japvo0000ag6z5ll002g8" data-title="py_stuffs" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/py-stuffs/" data-id="clo5japvo0000ag6z5ll002g8" data-title="py_stuffs" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -706,7 +705,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/sorting/" data-id="clo5japvp0001ag6zhy92e3g3" data-title="sorting" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/sorting/" data-id="clo5japvp0001ag6zhy92e3g3" data-title="sorting" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -762,7 +761,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      <a data-url="https://8odream.github.io/Blog/2023/10/25/python-func/" data-id="clo55njqe00043g6z9vw390lv" data-title="python_func" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
@@ -780,7 +779,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><a class="extend next" rel="next" href="/Blog/page/2/">weiter &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/Blog/page/2/">2</a><a class="extend next" rel="next" href="/Blog/page/2/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -811,7 +810,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/Blog/archives/2023/10/">October 2023</a></li></ul>
     </div>
@@ -821,7 +820,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
