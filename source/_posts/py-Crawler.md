@@ -6,6 +6,8 @@ tags: py
 
 Python作为一个"简单的"高级语言(尤其在爬虫领域享有盛名),有许多第三方库来帮助我们进行爬虫.爬虫,就是从互联网上获取定向的信息和数据,再进行分析和利用的方法.其中,bs4中的[BeautifulSoup](https://beautifulsoup.cn/)是一个分析网页内容的库,requests是一个从指定链接获取互联网内容的库.
 
+对于win11系统,右键开始菜单,点击"管理员(终端)"后,分别输入以下代码进行下载对应的库.其他的库同理.
+
 * 下载bs4库
 
 ``` shell
@@ -75,14 +77,14 @@ print(soup.prettify())  #.prettify()方法获取html的美化排版
 
 好吧,实际上,是否获得正确的排版对我们爬取内容无关.所以我们下面来讲一下爬取对应的内容.
 
-网页的内容分为静态内容和动态内容.例如,[哔哩哔哩](https://www.bilibili.com)首页推荐的时评内容是动态内容(不能固定).而像一些政府网站,例如[浙江省教育考试院](https://www.zjzs.net/moban/index/index.html)首页的内容就是静态内容,每次刷新我们都可以获得相同的内容.![图片](/source/images/静态网页.png)
+网页的内容分为静态内容和动态内容.例如,[哔哩哔哩](https://www.bilibili.com)首页推荐的时评内容是动态内容(不能固定).而像一些政府网站,例如[浙江省教育考试院](https://www.zjzs.net/moban/index/index.html)首页的内容就是静态内容,每次刷新我们都可以获得相同的内容.![图片](/docs/source/images/静态网页.png)
 
 首先简单看一下如何手动查找html的内容.(下面以chrome浏览器为例.其他浏览器类似同理)
 
 * 找到你想要的网页,按下键盘的F12,打开浏览器的调试窗口
-  ![图片](../images/查找元素.png)
+  ![图片](/docs/source/images/查找元素.png)
 * 点击左上角的箭头标志,然后鼠标点击网页中的对应内容.
-  ![图片](../images/获取元素.png)
+  ![图片](/docs/source/images/获取元素.png)
   可以看见右边的源代码中对应的标签被阴影化.这就是我们需要的内容了.
 
 对于静态网页,我们可以简单地分析html源代码来获取想要的文件.
@@ -150,9 +152,9 @@ tag.atrrs={'class': ['style_1'], 'id': 'id_1'} #注意，重新赋值的时候�
 下面给出获得直接浏览器UA的办法:
 
 * 打开任意网页,按下键盘的F12,选中上方Network.
-  ![图片](../images/network.png)
+  ![图片](/docs/source/images/network.png)
 * 按下键盘的F5刷新页面.发现下方Name下出现大量数据.任意选中一个,在右侧的窗口上方选中Headers,再在下面中找到User-Agent变量.复制右侧的值即可.
-  ![图片](../images/获取UA.png)
+  ![图片](/docs/source/images/获取UA.png)
 
 ### 获得动态的内容
 
@@ -163,13 +165,13 @@ tag.atrrs={'class': ['style_1'], 'id': 'id_1'} #注意，重新赋值的时候�
 * 打开F12,点击Network后刷新,获得全部的names
 * 使用搜索功能,输入当前在页面上看到的涨跌数字
 * 在下方的搜索结果中寻找"get"项下,带有当前时间的数据,点击后,在右侧的窗口中点击"Preview".在下方的数据中尝试查看有效数据
-  ![图片](../images/js数据获得.png)
+  ![图片](/docs/source/images/js数据获得.png)
 
 可以看到很快就找到了我们需要的内容.一般来说,对于获取到的这样的"列表类"数据,我们需要使用json格式来处理,并且我们只需要简单地对比网页中的数据,就可以知道某个值的第几位是什么作用.
 
 * 此时点击中间names栏的选中值,这个就是我们需要的url.
   事实上,即使我们在浏览器中打开这个url,并且显示的内容是一个网页,它也并非是一个网页.(怎么可能会有一个静态网页来储存动态数据呢?)其实,我们在下载器中下载这个地址,会发现下载的文件没有任何后缀名:
-  ![图片](../images/下载url结果.png)
+  ![图片](/docs/source/images/下载url结果.png)
 * 但是,我们可以用一些打开方式看到里面的数据(例如vscode),可以看到里面的数据和我们一开始在浏览器F12里看到的一致.这个时候我们就不需要使用bs4来处理网页的内容了.取而代之的,是json的分析方法.我们可以使用json模块对python的字符串进行处理,使之成为能够认读的json字符串.这种字符串可以以索引方式读写.
   我们使用如下的函数:
 
@@ -211,22 +213,18 @@ import time
 
 
 headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'}
-for i in range(0,999999+1):
+for i in range(0,9999+1):
     code=str("%06d"%i)
-    web=requests.get("https://push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351049610706292989315_1702212722432&secid=1."+code+"&ut=fa5fd1943c7b386f172d6893dbfba10b&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&beg=0&end=20500101&smplmt=460&lmt=1000000&_=1702212722433",headers=headers)
+    web=requests.get("https://36.push2his.eastmoney.com/api/qt/stock/kline/get?cb=jQuery351006954368435068203_1702272437621&secid=0."+code+"&ut=fa5fd1943c7b386f172d6893dbfba10b&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&beg=0&end=20500101&smplmt=460&lmt=1000000&_=1702272437622",headers=headers)
     web.encoding="UTF-8"
     text=web.text  #.text参数获取源代码
 
     text_=json.loads(text[42:-2]) #从第四十二位截断，去除噪音直到倒数第三位，去除多余的括号和分号
 
     check=len(text) #国债以及不存在的股票没有数据，跳过
-    if check or text_["data"]["klines"]==[]<200:
+    if check<200 or text_["data"]["klines"]==[]:
         continue
     
-    flag=-1
-    if float(text_["data"]["klines"][-1].split(",")[-2])>=0:
-        flag=1
-
-    print("今日该代码:",code,"股票涨跌:",float(text_["data"]["klines"][-1].split(",")[3])*flag)
+    print("今日该代码:",code,text_['data']['name'],"股票现价:",float(text_["data"]["klines"][-1].split(",")[3]),"涨跌幅度:",text_['data']['klines'][-1].split(",")[-3]+"%")
     time.sleep(1) #使用sleep防止被ban
 ```
